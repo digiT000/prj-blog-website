@@ -1,0 +1,15 @@
+.activeLink{
+    position: relative;
+}
+.activeLink:before {
+    z-index: -1;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 105%;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--color-blue-500);
+    transition: width 0.3s ease-in-out; /* Add transition */
+}

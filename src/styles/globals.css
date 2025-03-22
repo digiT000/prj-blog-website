@@ -1,15 +1,55 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-neutral-600: #4a4846;
+  --color-neutral-700: #34302d;
+  --color-blue-500: #93cefc;
 }
 
-/*@theme inline {*/
-/*  --color-background: var(--background);*/
-/*  --color-foreground: var(--foreground);*/
+@theme {
+  /*DISABLE DEFAULT COLOR*/
+  --color-blue-*: initial;
+  --color-red-*: initial;
+  --color-neutral-*: initial;
+  --color-green-*: initial;
+  --color-yellow-*: initial;
 
-/*}*/
+  /*NEW COLOR*/
+  --color-neutral-900: #1c1a19;
+  --color-neutral-800: #201e1d;
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-400: #c0bfbf;
+  --color-neutral-300: #dedcda;
+  --color-neutral-200: #efedeb;
+  --color-neutral-100: #fbf9f7;
+  --color-neutral-0: #ffffff;
+
+  --color-blue-200: #e1f1fe;
+  --color-blue-500: var(--color-blue-500);
+  --color-blue-700: #75b0de;
+  --color-blue-800: #5792c0;
+  --color-blue-900: #022b4a;
+
+  --color-green-200: #e9f5ea;
+  --color-green-500: #9dd3a9;
+  --color-green-700: #008531;
+  --color-green-900: #132a18;
+
+  --color-yellow-200: #fff5e1;
+  --color-yellow-500: #facc79;
+  --color-yellow-700: #ea9806;
+  --color-yellow-900: #4a3003;
+
+  --color-red-400: #f04438;
+  --color-red-600: #d92d20;
+
+  /*  FONT*/
+  --font-dm-sans: 'DM Sans', sans-serif;
+}
 
 /*@media (prefers-color-scheme: dark) {*/
 /*  :root {*/
@@ -18,8 +58,78 @@
 /*  }*/
 /*}*/
 
-/*body {*/
-/*  background: var(--background);*/
-/*  color: var(--foreground);*/
-/*  font-family: Arial, Helvetica, sans-serif;*/
-/*}*/
+body {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
+  font-family: var(--font-dm-sans);
+}
+
+/*GLOBAL TEXT STYLE*/
+.text-preset-1 {
+  font-size: 2.5rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+.text-preset-2 {
+  font-size: 2rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+.text-preset-3 {
+  font-size: 1.75rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+.text-preset-4 {
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+.text-preset-5 {
+  font-size: 1.25rem;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.text-with-underline:before {
+  z-index: -1;
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 105%;
+  bottom: 5px;
+  height: 8px;
+  background-color: var(--color-blue-500);
+  transition: width 0.3s ease-in-out; /* Add transition */
+}
+.text-with-sideline:after {
+  content: '';
+  position: absolute;
+  right: -40%;
+  bottom: 8px;
+  width: 60px;
+  height: 8px;
+  background-color: var(--color-blue-500);
+  transition: width 0.3s ease-in-out; /* Add transition */
+}
+
+.text-preset-7 {
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: -0.2px;
+}
+
+.text-preset-8 {
+  font-size: 1rem;
+  line-height: 130%;
+  letter-spacing: -0.2px;
+}
